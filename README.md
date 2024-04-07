@@ -12,6 +12,7 @@
   - [Making your first commit](#making-your-first-commit)
     - [How to make a github repository](#how-to-make-a-github-repository)
     - [Necessary git commands](#necessary-git-commands)
+    - [Begin working on the repository](#begin-working-on-the-repository)
 
 ## Why use git/github or version control
 
@@ -113,3 +114,12 @@ Basically it is one big folder filled with code files necessary to make a projec
 | checkout \<branch-name\> | switches to a different branch or a specific commit, updating the working directory to match the state of the chosen branch or commit    | `$git checkout <branch-name>`                                    |
 | pull                   | fetches changes from the remote repository and merges them into the current branch                                                       | `$git pull`                                                      |
 | push                   | uploads local changes to the remote repository, making them accessible to others                                                         | `$git push`                                                      |
+
+### Begin working on the repository
+
+1. Clone the repository `$git clone https://<username>//<username>.git`
+2. Open the repository and the README.md in your favorite text editor
+3. Make changes, example add a description of yourself
+4. Add the file to staging `$git add README.md`
+5. Add a descriptive commit message `$git commit -m "Update readme"`
+6. Push the repository to github `$git push`
