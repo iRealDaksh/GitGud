@@ -13,15 +13,15 @@
     - [How to make a github repository](#how-to-make-a-github-repository)
     - [Necessary git commands](#necessary-git-commands)
     - [Begin working on the repository](#begin-working-on-the-repository)
+  - [Making your first open source contribution](#making-your-first-open-source-contribution)
+  - [Examples](#examples)
+  - [What we learnt](#what-we-learnt)
 
 ## Why use git/github or version control
 
-
 ## Getting started with github
 
-
 ### Create a github account
-
 
 **What is "github"?**
 
@@ -32,7 +32,6 @@ range of features aimed towards collaboration, code review, and project manageme
 Go to [github](https://github.com) and sign up to create a new account if you don't already have one.
 
 ### How to install git
-
 
 **What is "git?"**
 
@@ -58,7 +57,6 @@ _NOTE: Do not change any preset installation setting in the wizard (unless you k
 
 ### How to setup remote access on github
 
-
 There are two ways of setting up remote access privilege on github HTTP and SSH, but in this session we will be focusing on only one of them, ie, HTTP
 
 **HTTPS**
@@ -77,11 +75,9 @@ _NOTE: The access token is only visible once and when the tab is closed its not 
 
 ## Making your first commit
 
-
 For this example we will be creating your own personalized `README.md` file which gets displayed whenever someone views your page.
 
 ### How to make a github repository
-
 
 **What is a "repository"?**
 
@@ -101,19 +97,18 @@ Basically it is one big folder filled with code files necessary to make a projec
 
 ### Necessary git commands
 
-
-| Command                | Description                                                                                                                              | Example                                                          |
-| :--------------------- | :--------------------------------------------------------------------------------------------------------------------------------------- | :--------------------------------------------------------------- |
-| init                   | initializes a new git repository in current directory                                                                                    | `$git init`                                                      |
+| Command                  | Description                                                                                                                              | Example                                                          |
+| :----------------------- | :--------------------------------------------------------------------------------------------------------------------------------------- | :--------------------------------------------------------------- |
+| init                     | initializes a new git repository in current directory                                                                                    | `$git init`                                                      |
 | clone \[repo url\]       | create a local copy (clone) of an existing repository                                                                                    | `$git clone https://github.com/<username>/<repository-name>.git` |
 | add \[file(s) \| <.>\]   | adds file changes to the staging area so that they can be committed                                                                      | `$git add file1 file2 folder`                                    |
 | commit -m \<message\>    | records changes to the repository, creating a new commit with a descriptive message                                                      | `$git commit -m "Placeholder message"`                           |
-| status                 | displays the current state of the repository, including changes that have been staged or not staged for commit, untracked files and more | `$git status`                                                    |
-| log                    | displays a chronological list of commits in the repository, showing commit hashes, authors, dates, and commit messages                   | `$git log`                                                       |
-| branch                 | creates a new branch with the specified name. branches allow for parallel development and isolation of features or fixes                 | `$git branch <branch-name>`                                      |
+| status                   | displays the current state of the repository, including changes that have been staged or not staged for commit, untracked files and more | `$git status`                                                    |
+| log                      | displays a chronological list of commits in the repository, showing commit hashes, authors, dates, and commit messages                   | `$git log`                                                       |
+| branch                   | creates a new branch with the specified name. branches allow for parallel development and isolation of features or fixes                 | `$git branch <branch-name>`                                      |
 | checkout \<branch-name\> | switches to a different branch or a specific commit, updating the working directory to match the state of the chosen branch or commit    | `$git checkout <branch-name>`                                    |
-| pull                   | fetches changes from the remote repository and merges them into the current branch                                                       | `$git pull`                                                      |
-| push                   | uploads local changes to the remote repository, making them accessible to others                                                         | `$git push`                                                      |
+| pull                     | fetches changes from the remote repository and merges them into the current branch                                                       | `$git pull`                                                      |
+| push                     | uploads local changes to the remote repository, making them accessible to others                                                         | `$git push`                                                      |
 
 ### Begin working on the repository
 
@@ -123,3 +118,11 @@ Basically it is one big folder filled with code files necessary to make a projec
 4. Add the file to staging `$git add README.md`
 5. Add a descriptive commit message `$git commit -m "Update readme"`
 6. Push the repository to github `$git push`
+
+## Making your first open source contribution
+
+Head on over to your first open source project called [Introduce Yourself](https://github.com/Aditya-Jyoti/Introduce-Yourself/) and read its [CONTRIBUTING.md](https://github.com/Aditya-Jyoti/Introduce-Yourself/blob/main/CONTRIBUTING.md) file. It should have all instructions provided and should get you started with contributing to that project.
+
+## Examples
+
+## What we learnt
