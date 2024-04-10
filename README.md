@@ -14,6 +14,9 @@
     - [Necessary git commands](#necessary-git-commands)
     - [Begin working on the repository](#begin-working-on-the-repository)
   - [Making your first open source contribution](#making-your-first-open-source-contribution)
+  - [Merge and Rebase](#merge-and-rebase)
+    - [Git Merge](#git-merge)
+    - [Git Rebase](#git-rebase)
   - [Examples](#examples)
   - [What we learnt](#what-we-learnt)
 
@@ -122,6 +125,79 @@ Basically it is one big folder filled with code files necessary to make a projec
 ## Making your first open source contribution
 
 Head on over to your first open source project called [Introduce Yourself](https://github.com/Aditya-Jyoti/Introduce-Yourself/) and read its [CONTRIBUTING.md](https://github.com/Aditya-Jyoti/Introduce-Yourself/blob/main/CONTRIBUTING.md) file. It should have all instructions provided and should get you started with contributing to that project.
+
+## Merge and Rebase
+
+Pray to god that you don't have to come to this, but now that you have here's what merge hell is
+
+### Git Merge
+
+<img src="/assets/git-merge.png">
+
+Think of merging like stacking your new Lego pieces on top of your existing structure.
+You keep both the original bricks and the new ones, creating a taller tower.
+This is like when you have your main project (let's say a castle), and you want to add a tower (new feature) to it.
+You just put the tower on top, and now your castle has a new addition.
+
+**How to git merge?**
+
+1. First move to the branch you want to merge changes into
+
+```bash
+git checkout <branch-name>
+```
+
+2. Now it is a good practice to fetch your changes
+
+```bash
+git fetch
+```
+
+The main difference between `git pull` and `git fetch` is that git pull auto merges for you,
+hence why it may and may not work during merging.
+
+3. Now merge the branch onto your current branch
+
+```bash
+git merge <merging branch>
+```
+
+4. Resolve conflicts
+
+- Go to your code and you'll see some arrow `>>>` or `<<<` and equals `===`
+- `>>>` means the start of the change
+- `<<<` means the end of the change
+- Everything on top of the `===` is the content from current branch and everything below is the content from branch being merged.
+- delete arrows and equals as you go keeping or removing stuff as you go
+
+5. Add, Commit and Push your changes
+
+### Git Rebase
+
+<img src="/assets/git-rebase.png" />
+
+It's like taking your tower apart and rebuilding it with the new pieces added in between.
+So, instead of stacking the new pieces on top, you sort them out and insert them into your original tower one by one.
+This way, everything stays in order. This is similar to realizing you built your tower (branch)
+in the wrong spot, so you take it apart and rebuild it in the right place with
+the new pieces added in where they fit better.
+
+**How to git rebase**
+
+1. Set rebase to true
+
+```bash
+git config pull.rebase true
+```
+
+2. Git pull
+
+- Now you should see a bunch of warnings and it should pop you into rebase mode
+- Use `git rebase --continue` to move on to the next commit, if its the end of the rebasing commits then it moves to main
+- Use `git rebase --abort` to get back to the state before you ran `git rebase`
+- Just like merge go on and keep/remove changes that you want/don't want and keep adding and committing then
+
+3. Once done `git push`
 
 ## Examples
 
