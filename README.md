@@ -1,8 +1,8 @@
-# All about Git and Github
+# GitGd
 
 ## Index
 
-- [All about Git and Github](#all-about-git-and-github)
+- [GitGd](#gitgd)
   - [Index](#index)
   - [Why use git/github or version control](#why-use-gitgithub-or-version-control)
   - [Getting started with github](#getting-started-with-github)
