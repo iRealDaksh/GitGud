@@ -132,7 +132,9 @@ Pray to god that you don't have to come to this, but now that you have here's wh
 
 ### Git Merge
 
-<center> <img src="/assets/git-merge.png"> </center>
+<p align="center">
+<img src="/assets/git-merge.png">
+</p>
 
 Think of merging like stacking your new Lego pieces on top of your existing structure.
 You keep both the original bricks and the new ones, creating a taller tower.
@@ -174,7 +176,9 @@ git merge <merging branch>
 
 ### Git Rebase
 
-<center> <img src="/assets/git-rebase.png" /> </center>
+<p align="center">
+<img src="/assets/git-rebase.png" />
+</p>
 
 It's like taking your tower apart and rebuilding it with the new pieces added in between.
 So, instead of stacking the new pieces on top, you sort them out and insert them into your original tower one by one.
