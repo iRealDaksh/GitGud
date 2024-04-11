@@ -18,7 +18,6 @@
   - [Merge and Rebase](#merge-and-rebase)
     - [Git Merge](#git-merge)
     - [Git Rebase](#git-rebase)
-  - [Examples](#examples)
   - [FAQs](#faqs)
   - [What we learnt](#what-we-learnt)
 
@@ -136,9 +135,10 @@ Here's how you initialize a git repo locally and then add it globally to github.
 4. Copy its clone link (http/ssh)
 5. Come over to where you initialized a new repo and add a new remote
 
-  ```bash
-  git remote add origin <url>
-  ```
+```bash
+git remote add origin <url>
+```
+
 6. Add, Commit and Push your changes
 
 Now you can use your repo normally like you would anytime else.
@@ -168,7 +168,7 @@ You just put the tower on top, and now your castle has a new addition.
 
 ```bash
 git checkout <branch-name>
-````
+```
 
 2. Now it is a good practice to fetch your changes
 
@@ -223,8 +223,6 @@ git config pull.rebase true
 - Just like merge go on and keep/remove changes that you want/don't want and keep adding and committing then
 
 3. Once done `git push`
-
-## Examples
 
 ## FAQs
 
