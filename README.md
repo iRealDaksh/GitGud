@@ -13,11 +13,13 @@
     - [How to make a github repository](#how-to-make-a-github-repository)
     - [Necessary git commands](#necessary-git-commands)
     - [Begin working on the repository](#begin-working-on-the-repository)
+    - [What if you already have code written?](#what-if-you-already-have-code-written)
   - [Making your first open source contribution](#making-your-first-open-source-contribution)
   - [Merge and Rebase](#merge-and-rebase)
     - [Git Merge](#git-merge)
     - [Git Rebase](#git-rebase)
   - [Examples](#examples)
+  - [FAQs](#faqs)
   - [What we learnt](#what-we-learnt)
 
 ## Why use git/github or version control
@@ -122,6 +124,25 @@ Basically it is one big folder filled with code files necessary to make a projec
 5. Add a descriptive commit message `$git commit -m "Update readme"`
 6. Push the repository to github `$git push`
 
+### What if you already have code written?
+
+There are times when you have already written down some code so cloning a repo then adding your changes becomes a pain. Thats where `git init` command shines.
+
+Here's how you initialize a git repo locally and then add it globally to github.
+
+1. Go to any folder which you want to make a git repo of
+2. Type in `git init .` this should make the current folder a git repo (adds a .git file)
+3. Now go to github and create a black repo
+4. Copy its clone link (http/ssh)
+5. Come over to where you initialized a new repo and add a new remote
+
+  ```bash
+  git remote add origin <url>
+  ```
+6. Add, Commit and Push your changes
+
+Now you can use your repo normally like you would anytime else.
+
 ## Making your first open source contribution
 
 Head on over to your first open source project called [Introduce Yourself](https://github.com/Aditya-Jyoti/Introduce-Yourself/) and read its [CONTRIBUTING.md](https://github.com/Aditya-Jyoti/Introduce-Yourself/blob/main/CONTRIBUTING.md) file. It should have all instructions provided and should get you started with contributing to that project.
@@ -147,7 +168,7 @@ You just put the tower on top, and now your castle has a new addition.
 
 ```bash
 git checkout <branch-name>
-```
+````
 
 2. Now it is a good practice to fetch your changes
 
@@ -204,5 +225,7 @@ git config pull.rebase true
 3. Once done `git push`
 
 ## Examples
+
+## FAQs
 
 ## What we learnt
