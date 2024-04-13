@@ -291,3 +291,19 @@ If google doesn't help then turn to your favorite LLM for help like ChatGPT or P
 You could even open up an `issue` in this repository and I will reply back when I get time.
 
 ## What we learnt
+
+So we learnt
+
+1. What is git
+2. What is github
+
+Then we learnt how to
+
+1. Create a github repository
+2. Clone, Add, Commit and Push changes to that repository
+3. Contribute to open source projects
+
+And then we stepped into the tough parts and saw what is
+
+1. Git merge
+2. Git rebase
