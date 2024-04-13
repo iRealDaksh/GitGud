@@ -2,26 +2,43 @@
 
 ## Index
 
-- [GitGud](#gitgud)
-  - [Index](#index)
-  - [Why use git/github or version control](#why-use-gitgithub-or-version-control)
-  - [Getting started with github](#getting-started-with-github)
+- [Necessary git commands](#necessary-git-commands)
+- [Getting started with github](#getting-started-with-github)
     - [Create a github account](#create-a-github-account)
     - [How to install git](#how-to-install-git)
     - [How to setup remote access on github](#how-to-setup-remote-access-on-github)
-  - [Making your first commit](#making-your-first-commit)
+- [Making your first commit](#making-your-first-commit)
     - [How to make a github repository](#how-to-make-a-github-repository)
-    - [Necessary git commands](#necessary-git-commands)
     - [Begin working on the repository](#begin-working-on-the-repository)
-    - [What if you already have code written?](#what-if-you-already-have-code-written)
-  - [Making your first open source contribution](#making-your-first-open-source-contribution)
-  - [Merge and Rebase](#merge-and-rebase)
+- [Making your first open source contribution](#making-your-first-open-source-contribution)
+- [Merge and Rebase](#merge-and-rebase)
     - [Git Merge](#git-merge)
     - [Git Rebase](#git-rebase)
-  - [FAQs](#faqs)
-  - [What we learnt](#what-we-learnt)
+- [FAQs](#faqs)
+    - [What if I made changes that I don't want to commit?](#what-if-i-made-changes-that-i-dont-want-to-commit)
+    - [What if I accidentally made a commit?](#what-if-i-accidentally-made-a-commit)
+    - [What if I already have code written?](#what-if-i-already-have-code-written)
+    - [How do I revert changes back to a specific commit?](#how-do-i-revert-changes-back-to-a-specific-commit)
+    - [What's the difference between `git pull` and `git fetch`?](#whats-the-difference-between-git-pull-and-git-fetch)
+    - [How do I create a new branch?](#how-do-i-create-a-new-branch)
+    - [What's the difference between `git merge` and `git rebase`?](#whats-the-difference-between-git-merge-and-git-rebase)
+    - [I am getting an error that isn't listed here](#i-am-getting-an-error-that-isnt-listed-here)
+- [What we learnt](#what-we-learnt)
 
-## Why use git/github or version control
+## Necessary git commands
+
+| Command                  | Description                                                                                                                              | Example                                                          |
+| :----------------------- | :--------------------------------------------------------------------------------------------------------------------------------------- | :--------------------------------------------------------------- |
+| init                     | initializes a new git repository in current directory                                                                                    | `$git init`                                                      |
+| clone \[repo url\]       | create a local copy (clone) of an existing repository                                                                                    | `$git clone https://github.com/<username>/<repository-name>.git` |
+| add \[file(s) \| <.>\]   | adds file changes to the staging area so that they can be committed                                                                      | `$git add file1 file2 folder`                                    |
+| commit -m \<message\>    | records changes to the repository, creating a new commit with a descriptive message                                                      | `$git commit -m "Placeholder message"`                           |
+| status                   | displays the current state of the repository, including changes that have been staged or not staged for commit, untracked files and more | `$git status`                                                    |
+| log                      | displays a chronological list of commits in the repository, showing commit hashes, authors, dates, and commit messages                   | `$git log`                                                       |
+| branch                   | creates a new branch with the specified name. branches allow for parallel development and isolation of features or fixes                 | `$git branch <branch-name>`                                      |
+| checkout \<branch-name\> | switches to a different branch or a specific commit, updating the working directory to match the state of the chosen branch or commit    | `$git checkout <branch-name>`                                    |
+| pull                     | fetches changes from the remote repository and merges them into the current branch                                                       | `$git pull`                                                      |
+| push                     | uploads local changes to the remote repository, making them accessible to others                                                         | `$git push`                                                      |
 
 ## Getting started with github
 
@@ -99,21 +116,6 @@ Basically it is one big folder filled with code files necessary to make a projec
 6. Select a license (pick MIT)
 7. Click on `Create repository`
 
-### Necessary git commands
-
-| Command                  | Description                                                                                                                              | Example                                                          |
-| :----------------------- | :--------------------------------------------------------------------------------------------------------------------------------------- | :--------------------------------------------------------------- |
-| init                     | initializes a new git repository in current directory                                                                                    | `$git init`                                                      |
-| clone \[repo url\]       | create a local copy (clone) of an existing repository                                                                                    | `$git clone https://github.com/<username>/<repository-name>.git` |
-| add \[file(s) \| <.>\]   | adds file changes to the staging area so that they can be committed                                                                      | `$git add file1 file2 folder`                                    |
-| commit -m \<message\>    | records changes to the repository, creating a new commit with a descriptive message                                                      | `$git commit -m "Placeholder message"`                           |
-| status                   | displays the current state of the repository, including changes that have been staged or not staged for commit, untracked files and more | `$git status`                                                    |
-| log                      | displays a chronological list of commits in the repository, showing commit hashes, authors, dates, and commit messages                   | `$git log`                                                       |
-| branch                   | creates a new branch with the specified name. branches allow for parallel development and isolation of features or fixes                 | `$git branch <branch-name>`                                      |
-| checkout \<branch-name\> | switches to a different branch or a specific commit, updating the working directory to match the state of the chosen branch or commit    | `$git checkout <branch-name>`                                    |
-| pull                     | fetches changes from the remote repository and merges them into the current branch                                                       | `$git pull`                                                      |
-| push                     | uploads local changes to the remote repository, making them accessible to others                                                         | `$git push`                                                      |
-
 ### Begin working on the repository
 
 1. Clone the repository `$git clone https://<username>//<username>.git`
@@ -122,18 +124,6 @@ Basically it is one big folder filled with code files necessary to make a projec
 4. Add the file to staging `$git add README.md`
 5. Add a descriptive commit message `$git commit -m "Update readme"`
 6. Push the repository to github `$git push`
-
-### What if you already have code written?
-
-There are times when you have already written down some code so cloning a repo then adding your changes becomes a pain. Thats where `git init` command shines.
-
-Here's how you initialize a git repo locally and then add it globally to github.
-
-1. Go to any folder which you want to make a git repo of
-2. Type in `git init .` this should make the current folder a git repo (adds a .git file)
-3. Now go to github and create a black repo
-4. Copy its clone link (http/ssh)
-5. Come over to where you initialized a new repo and add a new remote
 
 ```bash
 git remote add origin <url>
@@ -225,5 +215,79 @@ git config pull.rebase true
 3. Once done `git push`
 
 ## FAQs
+
+### What if I made changes that I don't want to commit?
+
+Here we use the `git stash` command to temporarily store changes in your working directory without committing them
+
+1. stash you changes `git stash`
+2. apply your changes `git stash apply`
+
+**extra**
+
+- `git stash list`: check your stashed changes
+- `git stash apply stash@{number}`: apply a specific stash
+- `git stash pop`: apply stashed changes and remove it from the list
+- `git stash clear`: remove all stashed changes
+
+### What if I accidentally made a commit?
+
+So you made some changes that you accidentally committed? Here we can revert to last commit and stash new changes to get a new working space
+
+1. run `git reset HEAD^` to undo the last commit
+2. run `git stash` to stash your changes
+
+Now you should be back to where you were without having committed.
+
+_NOTE: only stash if you don't want to use the changes that you just made_
+
+### What if I already have code written?
+
+There are times when you have already written down some code so cloning a repo then adding your changes becomes a pain. Thats where `git init` command shines.
+
+Here's how you initialize a git repo locally and then add it globally to github.
+
+1. Go to any folder which you want to make a git repo of
+2. Type in `git init .` this should make the current folder a git repo (adds a .git file)
+3. Now go to github and create a black repo
+4. Copy its clone link (http/ssh)
+5. Come over to where you initialized a new repo and add a new remote
+
+### How do I revert changes back to a specific commit?
+
+If you want to go back to a specific point in your project's history, you can use the `git checkout` command followed by the commit hash you want to revert to.
+
+1. Find the hash of the commit you want to revert to by using `git log`.
+2. Run `git checkout <commit-hash>` to revert your project's state to that specific commit.
+
+### What's the difference between `git pull` and `git fetch`?
+
+`git pull` and `git fetch` are both used to update your local repository with changes from a remote repository, but they work slightly differently.
+
+- `git pull`: This command fetches changes from the remote repository and merges them into your current branch. It's essentially a combination of `git fetch` and `git merge`.
+- `git fetch`: This command only fetches changes from the remote repository and stores them in your local repository. It doesn't automatically merge them into your current branch. You'll need to use `git merge` or `git rebase` to incorporate the fetched changes into your branch.
+
+### How do I create a new branch?
+
+Creating a new branch allows you to work on new features or bug fixes without affecting the main codebase. Here's how you can create a new branch:
+
+1. Run `git checkout -b <branch-name>` to create a new branch and switch to it in one step.
+2. Make your changes on the new branch.
+3. When you're ready to merge your changes into the main branch, you can use `git merge` or create a pull request on GitHub.
+
+### What's the difference between `git merge` and `git rebase`?
+
+Both `git merge` and `git rebase` are used to integrate changes from one branch into another, but they do it in different ways.
+
+- `git merge`: This command integrates changes by merging the commits from one branch into another. It creates a new commit to record the merge, preserving the commit history of both branches.
+- `git rebase`: This command rewrites the commit history by moving the changes from one branch onto another branch. It creates new commits for each commit in the original branch, resulting in a linear history.
+
+Choosing between `git merge` and `git rebase` depends on your workflow and preferences.
+
+### I am getting an error that isn't listed here
+
+Google is your best friend. Google what error you are getting and there will almost always be someone who has faced the issue you are facing before hand.
+If google doesn't help then turn to your favorite LLM for help like ChatGPT or Phind.
+You could even open up an `issue` in this repository and I will reply back when I get time.
 
 ## What we learnt
