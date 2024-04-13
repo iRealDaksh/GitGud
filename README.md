@@ -2,19 +2,19 @@
 
 ## Index
 
-- [Necessary git commands](#necessary-git-commands)
-- [Getting started with github](#getting-started-with-github)
+  - [Necessary git commands](#necessary-git-commands)
+  - [Getting started with github](#getting-started-with-github)
     - [Create a github account](#create-a-github-account)
     - [How to install git](#how-to-install-git)
     - [How to setup remote access on github](#how-to-setup-remote-access-on-github)
-- [Making your first commit](#making-your-first-commit)
+  - [Making your first commit](#making-your-first-commit)
     - [How to make a github repository](#how-to-make-a-github-repository)
     - [Begin working on the repository](#begin-working-on-the-repository)
-- [Making your first open source contribution](#making-your-first-open-source-contribution)
-- [Merge and Rebase](#merge-and-rebase)
+  - [Making your first open source contribution](#making-your-first-open-source-contribution)
+  - [Merge and Rebase](#merge-and-rebase)
     - [Git Merge](#git-merge)
     - [Git Rebase](#git-rebase)
-- [FAQs](#faqs)
+  - [FAQs](#faqs)
     - [What if I made changes that I don't want to commit?](#what-if-i-made-changes-that-i-dont-want-to-commit)
     - [What if I accidentally made a commit?](#what-if-i-accidentally-made-a-commit)
     - [What if I already have code written?](#what-if-i-already-have-code-written)
@@ -23,7 +23,7 @@
     - [How do I create a new branch?](#how-do-i-create-a-new-branch)
     - [What's the difference between `git merge` and `git rebase`?](#whats-the-difference-between-git-merge-and-git-rebase)
     - [I am getting an error that isn't listed here](#i-am-getting-an-error-that-isnt-listed-here)
-- [What we learnt](#what-we-learnt)
+  - [What we learnt](#what-we-learnt)
 
 ## Necessary git commands
 
@@ -69,8 +69,8 @@ Use your respective package managers to install git, for example on debian based
 1. Download the installer -> [exe link](https://git-scm.com/download/win)
 2. Follow the installation wizard (gui)
 3. Set your username and email
-   - username: `$git config --global user.username <username>`
-   - email: `$git config --global user.email <email>`
+   - username: `git config --global user.username <username>`
+   - email: `git config --global user.email <email>`
 
 _NOTE: Do not change any preset installation setting in the wizard (unless you know what you are doing)_
 
@@ -83,14 +83,15 @@ There are two ways of setting up remote access privilege on github HTTP and SSH,
 **HTTPS**
 
 1. Create a public access key
-2. Enable github credential caching `git config --global credential.helper 'cache --timeout=31536000'`
-3. Go to settings page (click on user icon on top right then settings)
-4. Scroll down till you see developer settings and click on it
-5. Go to personal access tokens, then tokens classic
-6. Generate a new token, then click classic
-7. Give it necessary permissions
-8. Copy access token
-9. Pull a repo using http, then paste access token when prompted for a password
+2. If you are on linux, heres how you use credentials for github `git config --global credential.helper 'cache --timeout=31536000'`
+3. If you are on windows, use `git config --global credential.helper manager` and then you should get pop ups for credentials
+4. Go to settings page (click on user icon on top right then settings)
+5. Scroll down till you see developer settings and click on it
+6. Go to personal access tokens, then tokens classic
+7. Generate a new token, then click classic
+8. Give it necessary permissions
+9. Copy access token
+10. Pull a repo using http, then paste access token when prompted for a password
 
 _NOTE: The access token is only visible once and when the tab is closed its not viewable again so don't forget to save it_
 
